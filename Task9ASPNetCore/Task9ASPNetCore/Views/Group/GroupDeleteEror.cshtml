@@ -1,0 +1,21 @@
+﻿
+<div class="modal-backdrop show"></div>
+
+<div class="modal fade show" id="exempleModal" tabindex="-1" role="dialog"
+aria-labelledby="exampleModalLabel" aria-hidden="true" style="display:block">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class=modal-header>
+                <h5 class="modal-title" id="exampleModalLabel">Delete ERROR</h5>
+                <a class="btn-close" asp-controller="Group" asp-action="Index" asp-route-id="@ViewBag.CourseId"></a>
+            </div>
+            <div class="modal-body">
+                <span class="text-danger">You can't Delete group with student</span>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-primary" asp-controller="Group" asp-action="Index" asp-route-id="@ViewBag.CourseId">Close</a>
+            </div>
+        </div>
+    </div>
+
+</div>

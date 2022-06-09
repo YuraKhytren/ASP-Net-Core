@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task9ASPNetCore</title>
+    @await Html.PartialAsync("CssPartial")
+   
+</head>
+<body>
+    <header>
+        @await Html.PartialAsync("HeaderPartial")
+    </header>
+  @RenderBody()
+
+  @await Html.PartialAsync("ScriptPartial")
+</body>
+</html>

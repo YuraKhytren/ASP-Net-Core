@@ -1,0 +1,42 @@
+﻿
+@using Task9ASPNetCore.ViewModels
+
+@model IEnumerable<StudentViewModel>
+
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-20 alert-success text-center">
+            <span class="text-dark" style="font-size: 30px" > <a asp-controller="Group" asp-action="Index" asp-route-id="@ViewBag.CourseId">Go to Group</a> </span>
+        </div>
+        <table class="table table-success table-striped table-bordered mt-5 text-center">
+            <theead>
+                <tr>
+                    <th scope="col"><span class="text-primary">Student Firstame</span></th>
+                    <th scope="col" ><span class="text-primary">Student Lastname</span></th>
+                    <th scope="col" ><span class="text-primary">Student Patronumic</span></th>
+                    <th scope="col" ><span class="text-info">Update Student</span></th>
+                    <th scope="col" ><span class="text-danger">Delete Student</span></th>
+                </tr>
+            </theead>
+            <tbody>
+                @foreach(var student in Model)
+                {
+                <tr>
+                    <th scope="row"  class="col-3">@student.FirstName</th>
+                    <th class="col-3">@student.LastName</th>
+                    <th class="col-4">@student.Patronymic</th>
+                    <th class="col-1"><a class="btn btn-info" asp-controller="Student" asp-action="Edit" asp-route-id="@student.Id" asp-route-groupId="@student.GroupId" asp-route-courseId="@ViewBag.CourseId">Update</a></th>
+                    <th class="col-1"><a class="btn btn-close btn-danger" asp-controller="Student" asp-action="Delete" asp-route-id="@student.Id" asp-route-groupid="@student.GroupId" asp-route-courseId="@ViewBag.CourseId"></a></th>
+                </tr>
+                }
+            </tbody>
+           
+        </table>
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-success" asp-controller="Student" asp-action="Create" asp-route-groupId="@ViewBag.GroupId" asp-route-courseId="@ViewBag.CourseId">Add Student</a>
+
+            </div>
+        </div>
+    </div>
+</div>

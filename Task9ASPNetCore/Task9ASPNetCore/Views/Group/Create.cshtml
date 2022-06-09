@@ -1,0 +1,27 @@
+﻿
+@using Task9ASPNetCore.ViewModels
+
+@model GroupViewModel
+
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-20 alert-success text-center">
+            <span class="text-dark" style="font-size: 30px"> Edit Group </span>
+        </div>
+        <div>
+            <form asp-controller="Group" asp-action="Create" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="CourseId" />
+
+                <div asp-validation-summary="All"></div>
+                <div>
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" />
+                    <span asp-validation-for="Name"></span>
+                </div>
+        
+                <input type="submit" value="Save" />
+            </form>
+        </div>
+    </div>
+</div>
